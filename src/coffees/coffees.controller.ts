@@ -10,13 +10,13 @@ export class CoffeesController {
     return this.coffeesService.findAll();
   }
 
-  @Get(':id')
-  findOne(@Param('id') id: string) {
-    return this.coffeesService.findOne(id);
-  }
-
   @Post()
   create(@Body() coffee: any) {
     this.coffeesService.create(coffee);
+  }
+
+  @Get(':id')
+  findOne(@Param('id') id: string) {
+    return this.coffeesService.findOne(id);
   }
 }
